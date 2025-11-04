@@ -10,9 +10,16 @@
 // let mySize : Size = Size.Medium;
 // console.log(mySize);
 
-function calculateTax(income:number,taxYear:number = 2022){
-    if(taxYear < 2022) return income * 1.2;
-    return income * 1.3;
+// function calculateTax(income:number,taxYear:number = 2022) : number{
+//     if(taxYear < 2022) return income * 1.2;
+//     return income * 1.3;
   
+// }
+// console.log(calculateTax(1000,2020))
+
+function calculateWeight(weight : string | number) : number{
+    if(typeof weight === 'number') return weight * 2.1;
+    return parseInt(weight) * 2.2;
 }
-console.log(calculateTax(1000,2020))
+console.log(calculateWeight(10))
+console.log(calculateWeight("10"))
