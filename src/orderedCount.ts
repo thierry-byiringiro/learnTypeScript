@@ -1,15 +1,10 @@
 function orderedCount(text: string): [string, number][] {
   text.split("");
-
-  let obj : {[key:string] : number} = {};
-  for(let i = 0;i<text.length;i++){
-      const char= text[i]!;
-      if(obj[char]){
-        obj[char]++
-      }else{
-        obj[char] = 1;
-      }
-  }
-  return Object.entries(obj);
+   const newMap = new Map<string,number>();
+    for(const char of text){
+        newMap.set(char,(newMap.get(char) || 0) + 1)
+    }
+    console.log(newMap);
+    return Array.from(newMap.entries())
 }
 console.log(orderedCount("abracadabra"))
